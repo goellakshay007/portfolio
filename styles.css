@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Brand & Layout Atmosphere (Warm Dark Mode) */
+  --color-bg-dark: #0a0705;        /* Extremely deep warm off-black */
+  --color-bg-card: #140e0a;        /* Warm off-black card background */
+  --color-fg-dark: #faf9f6;        /* Warm bone white for readability */
+  --color-accent: #ff7600;         /* Vibrant accent orange */
+  --color-accent-blue: #312dfb;    /* High-voltage Cobalt */
+  --color-border: rgba(250, 249, 246, 0.08); /* Soft white border */
+  --color-border-hover: rgba(255, 118, 0, 0.3); /* Accent border on hover */
+
+  /* Typography System */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-interface: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spring Curves & Motion */
+  --ease-spring-elegant: linear(0 0%, .0059 1%, .0224 2%, .0478 3%, .0805 4%, .119 5%, .1621 6%, .2085 7%, .2573 8%, .3075 9%, .3583 10%, .4091 11%, .4593 12%, .5084 13%, .556 14%, .6017 15%, .6453 16%, .6867 17%, .7256 18%, .762 19%, .7958 20%, .827 21%, .8556 22%, .8817 23%, .9054 24%, .9267 25%, .9457 26%, .9625 27%, .9773 28%, .9902 29%, 1.0014 30%, 1.0109 31%, 1.0188 32%, 1.0254 33%, 1.0307 34%, 1.0349 35%, 1.0381 36%, 1.0404 37%, 1.0418 38%, 1.0426 39%, 1.0428 40%, 1.0424 41%, 1.0416 42%, 1.0405 43%, 1.039 44%, 1.0373 45%, 1.0354 46%, 1.0334 47%, 1.0313 48%, 1.0292 49%, 1.027 50%, 1.0248 51%, 1.0227 52%, 1.0206 53%, 1.0186 54%, 1.0166 55%, 1.0148 56%, 1.013 57%, 1.0114 58%, 1.0098 59%, 1.0084 60%, 1.0071 61%, 1.0059 62%, 1.0048 63%, 1.0038 64%, 1.0029 65%, 1.0021 66%, 1.0014 67%, 1.0008 68%, 1.0003 69%, .9998 70%, .9994 71%, .9991 72%, .9988 73%, .9986 74%, .9984 75%, .9983 76%, .9982 77%, .9981 78%, .9981 79%, .9981 80%, .9981 81%, .9982 82%, .9982 83%, .9983 84%, .9984 85%, .9984 86%, .9985 87%, .9986 88%, .9987 89%, .9988 90%, .9989 91%, .999 92%, .9991 93%, .9992 94%, .9993 95%, .9993 96%, .9994 97%, .9995 98%, .9995 99%, .9996 100%);
+  --duration-spring: 0.75s;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-fg-dark);
+  font-family: var(--font-interface);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-interface {
+  font-family: var(--font-interface);
+}
+
+/* Custom Animation Classes */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s var(--ease-spring-elegant) forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s var(--ease-spring-elegant) forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skeleton Loading Shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1512;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.08) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Premium Industrial Grid lines and borders */
+.industrial-border {
+  border: 1px solid var(--color-border);
+  transition: border-color var(--duration-spring) var(--ease-spring-elegant),
+              box-shadow var(--duration-spring) var(--ease-spring-elegant);
+}
+
+.industrial-border:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 0 30px rgba(255, 118, 0, 0.05);
+}
+
+/* Premium Spring Hover Effects */
+.spring-hover {
+  transition: transform var(--duration-spring) var(--ease-spring-elegant);
+}
+
+.spring-hover:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+/* Custom Magnetic / Floating Button */
+.floating-cta {
+  background-color: var(--color-accent);
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(255, 118, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.floating-cta:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 118, 0, 0.4);
+  background-color: #ff9130;
+}
+
+/* Subtle background noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.02;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3 PreservingAspectRatio='none'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
