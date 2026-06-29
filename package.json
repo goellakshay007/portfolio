@@ -2,16 +2,12 @@
   "name": "designer-portfolio",
   "version": "1.0.0",
   "description": "Premium automated portfolio website",
-  "main": "update_portfolio.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "update": "node update_portfolio.js"
+    "preview": "vite preview"
   },
-  "dependencies": {
-    "rss-parser": "^3.13.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "vite": "^5.0.0"
   },

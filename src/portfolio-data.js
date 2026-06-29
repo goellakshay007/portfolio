@@ -3,26 +3,6 @@ export const profileData = {
   "linkedinDM": "https://www.linkedin.com/messaging/thread/new/?recipient=https://www.linkedin.com/in/lakshay-goel-ba92a1210/",
   "projects": [
     {
-      "id": 1782095581027,
-      "title": "Product design of a Perfume",
-      "category": "Product Design",
-      "link": "https://www.behance.net/gallery/223968237/Product-design-of-a-Perfume",
-      "image": "https://mir-s3-cdn-cf.behance.net/projects/404/322c84223968237.Y3JvcCw4MDgsNjMyLDAsMA.jpg",
-      "tags": [
-        "Product Design"
-      ]
-    },
-    {
-      "id": 1782095580869,
-      "title": "Graphic Design Portfolio",
-      "category": "Graphics",
-      "link": "https://www.behance.net/gallery/224028661/Graphic-Design-Portfolio",
-      "image": "https://mir-s3-cdn-cf.behance.net/projects/404/c7a77d224028661.Y3JvcCw4MDgsNjMyLDAsMA.jpg",
-      "tags": [
-        "Graphics"
-      ]
-    },
-    {
       "id": 1,
       "title": "NeuroGrid AI | Visual Identity & Brand System Design",
       "category": "Brand Identity",
